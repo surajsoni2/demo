@@ -4,6 +4,8 @@ FROM eclipse-temurin:17-jdk-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
+RUN ./mvnw clean -Dmaven.test.skip install
+
 # Copy the Spring Boot application's JAR file into the container
 COPY target/demo.jar /app/application.jar
 
